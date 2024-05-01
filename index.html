@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <form action="clear.php" method="post">
+    <style>
+        body{
+            padding: 0px;
+            margin: 0px;
+            font-family: abel;
+            background-image: url(image/recent.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .container{
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 28%;
+            margin: auto;
+            background-color: rgb(18, 17, 17);
+            color: rgb(247, 241, 241);
+            padding: 30px;
+            box-shadow: 0px 2px 8px 2px rgb(237, 236, 236);
+            border-radius: 10px;
+            box-sizing: border-box;
+            
+        }
+        .container h2{
+            padding: 10px 25px;
+            letter-spacing: 5px;
+        }
+        .form-container label{
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 2px;
+
+        }
+        button{
+            padding: 12px 20px;
+            cursor: pointer;
+            font-family: abel;
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
+        button:hover{
+            background: rgba(246, 243, 243, 0.5);
+        }
+        input[type=text], input[type=Password],input[type=file], button{
+            width: 100%;
+            padding: 8px 12px;
+            margin: 8px 0px;
+            display: inline-block;
+            box-sizing: border-box;
+            color: rgb(237, 230, 230);
+            background-color: transparent;
+            border: 2px solid rgb(240, 237, 237);
+        }
+        input[type=text]:focus, input[type=Password]:focus input[type=file]:focus{
+            outline: none;
+        }
+        a{
+           border: 2px solid rgb(86, 51, 160);
+           margin: 7px;
+           padding: 10px;
+           display: column;
+           width: 50px;
+           border-radius: 20px;
+            color: rgb(254, 251, 251);
+            background-color: cornflowerblue;
+        
+            
+             }
+    li{
+        
+        margin-top: 180px;
+        text-align: center;
+        list-style: none;
+    
+    }
+
+    
+
+    </style>
+    <li id="item">
+        <a href="text" id="home">Home</a>
+        <a href="text" id="menu">Menu</a>
+        <a href="text" id="trash">Trash</a>
+        <a href="text" id="close">Close</a>
+    </li>
+    <div class="container">
+        <h2>Login</h2>
+        <div class="form-container">
+            <form>
+           <label><b> Username:</b></lable>
+             <input type="text" id="name" placeholder="Username" required>
+             <br>
+            
+               <label><b> Password:</b></label>
+                <input type="Password" id="password" placeholder="Password" required>
+                <br>
+            
+                <input type="file" id="clear" placeholder="" required>
+                <br>
+                    <button onclick="ha()" id="btn">Login</button>
+                
+             </form>
+                </div>
+            </div>
+            
+            <script>
+               function ha() {
+  
+  let name = document.getElementById("name").value;
+  let password = document.getElementById("password").value;
+
+  
+  if (name.trim() === "" || password.trim() === "") {
+    
+    alert("Please enter both name and password.");
+ 
+  } else {
+    
+    localStorage.setItem("name", name);
+    localStorage.setItem("password", password);
+
+    alert("Welcome, " + name + "! You are now logged in.");
+  }
+}
+</script>
+
+
+                
+</body>
+</html>
